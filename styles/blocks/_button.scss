@@ -1,0 +1,121 @@
+@use "../media" as *;
+@use "../mixins" as *;
+
+.button {
+  display: inline-flex;
+  height: 38px;
+  align-items: center;
+  padding-inline: 26px;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+
+  @include hover {
+    background-color: transparent;
+    color: var(--color-light);
+    border: var(--border-light);
+  }
+
+  @include mobile {
+    padding-inline: 18px;
+  }
+
+  &--transparent {
+    position: relative;
+    height: var(--button-height);
+    padding-left: 31px;
+    padding-right: 80px;
+    background-color: transparent;
+    border: var(--border-light);
+    color: var(--color-light);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      height: 100%;
+      aspect-ratio: 1;
+      background: url('/icons/arrow-top-right.svg') center/70% no-repeat;
+      border: var(--border-light);
+      border-radius: 50%;
+      
+    }
+
+    @include hover {
+      color: var(--color-dark);
+      background: var(--color-light);
+      
+      &::after {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+.burger-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 4px;
+  width: 40px;
+  aspect-ratio: 1;
+  color: var(--color-light);
+  background-color: transparent;
+  border: var(--border-light);
+  border-radius: 50%;
+  padding-left: 8px;
+
+  @include hover {
+    color: var(--color-light-gray);
+    border-color: var(--color-light-gray);
+  }
+
+  &__line {
+    width: 6px;
+    height: 1px;
+    background-color: currentColor;
+    box-shadow: 16px 0 0 currentColor;
+  }
+}
+
+.input {
+  width: 100%;
+  height: var(--button-height);
+  padding-inline: 25px;
+  background: transparent;
+  border: var(--border-gray);
+  border-radius: var(--border-radius);
+
+  &::placeholder {
+    color: var(--color-light-gray);
+  }
+
+  @include hover {
+    border-color: var(--border-light);
+  }
+
+  &:focus {
+
+    outline: none;
+  }
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

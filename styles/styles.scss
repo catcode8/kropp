@@ -1,0 +1,18 @@
+@use 'normalize';
+@use 'fonts';
+@use 'mixins';
+@use 'media';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use './blocks/button';
+@use './blocks/header';
+@use './blocks/banner';
+@use './blocks/motivation';
+@use './blocks/training-types';
+@use './blocks/join-us';
+@use './blocks/location';
+@use './blocks/family';
+@use './blocks/calculate';
+@use './blocks/footer';

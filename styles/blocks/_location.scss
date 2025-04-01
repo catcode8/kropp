@@ -1,0 +1,59 @@
+@use "../media" as *;
+@use "../mixins" as *;
+
+.location {
+  background-color: var(--color-dark);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include tablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__maps {
+    width: 100%;
+    filter: grayscale(100%) invert(1) sepia(0%) saturate(40%) brightness(100%)
+      contrast(100%) hue-rotate(0deg);
+
+      @include tablet {
+        height: 360px;
+      }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 15px;
+    text-align: center;
+
+    @include mobile {
+      padding-block: 40px;
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__description {
+    max-width: 490px;
+
+    &:not(:last-child) {
+      margin-bottom: 37px;
+    }
+
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

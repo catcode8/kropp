@@ -1,0 +1,150 @@
+@use "../media" as *;
+@use "../mixins" as *;
+
+.calculate {
+  padding-block: 146px;
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+
+  @include tablet {
+    padding-block: 100px;
+    column-gap: 20px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: 40px;
+    padding-block: 60px;
+  }
+
+  &__body {
+    flex-grow: 1;
+    max-width: 627px;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__description {
+    max-width: 385px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form-body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 30px;
+    
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input {
+    color: var(--color-light-gray);
+  }
+
+  &__button {
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__table-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 610px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 100%;
+      aspect-ratio: 1;
+      background-color: var(--color-dark);
+      border-radius: 50%;
+      
+      @include mobile {
+      display: none;
+    }
+    }
+
+    
+  }
+  
+  &__table {
+    position: relative;
+  }
+
+  &__table th {
+    padding-block: 20px;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--color-light);
+  }
+
+  &__table td {
+    position: relative;
+    padding-block: 14px;
+  }
+
+  &__table tfoot td {
+    padding-top: 33px;
+    padding-bottom: 0;
+    color: var(--color-light);
+
+    @include tablet {
+      padding-top: 10px;
+    }
+  }
+
+  &__table :is(td, th) {
+    padding-right: 30px;
+
+    &:not(:first-child) {
+      padding-left: 30px;
+    }
+
+    &:not(:last-child) {
+      border-right: var(--border-gray);
+    }
+
+    @include tablet {
+      padding-block: 10px;
+    }
+  }
+
+  &__table tbody td {
+    border-top: var(--border-gray);
+  }
+}
+
+.calculate__input.wide {
+  grid-column: -1 / 1;
+}
+
+.calculate__table tbody tr:last-child td:first-child::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1px;
+  background-color: var(--color-dark-gray);
+}

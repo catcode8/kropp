@@ -1,0 +1,82 @@
+@use './mixins' as *;
+@use './media' as *;
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: 0.05em;
+  color: var(--color-light-gray);
+  background-color: #131619;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  @include hover{
+    color: var(--color-light-gray);
+    }
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.h1 {
+  @include fluid-text(60, 43);
+  line-height: 1.2;
+}
+
+.h2 {
+  @include fluid-text(40, 36);
+  line-height: 1.3;
+}
+
+.h3 {
+  @include fluid-text(22, 22);
+}
+
+.h4 {
+  @include fluid-text(16, 16);
+}
+
+.title-medium {
+  font-size: clamp(20px, 2.08vw, 40px);
+  line-height: 1.3;
+}
+
+.title-big{
+  font-size: clamp(24px, 3.12vw, 60px);
+  line-height: 1.2;
+}
+
+.description-up {
+  font-size: 20px;
+    line-height: 1.65;
+    text-transform: uppercase;
+    color: var(--color-light);
+    text-align: center;
+
+    @include mobile {
+      font-size: 16px;
+    }
+}
+
+p {
+  margin-bottom: 0;
+}
+
+p:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+

@@ -1,0 +1,157 @@
+@use "../media" as *;
+@use "../mixins" as *;
+
+.footer {
+  --footerLogowight: 22.77%;
+
+  &__main {
+    padding-top: 140px;
+    padding-bottom: 160px;
+    background-color: var(--color-dark);
+
+    @include tablet {
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+
+    @include mobile {
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__header,
+  &__body {
+    display: grid;
+    column-gap: 62px;
+  }
+
+  &__header {
+    grid-template-columns: var(--footerLogowight) auto;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+    }
+  }
+
+  &__description {
+    text-align: left;
+  }
+
+  &__body {
+    grid-template-columns: var(--footerLogowight) repeat(3, 1fr);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    font-size: clamp(18px, 1.15vw, 22px);
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__schedule {
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__address {
+    font-style: normal;
+
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__subscribe {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__input {
+    padding-right: 70px;
+    color: var(--color-light-gray);
+  }
+
+  &__button {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    height: 96%;
+    aspect-ratio: 1;
+    background: url("/icons/arrow-top-right.svg") center/70% no-repeat;
+    border: var(--border-gray);
+    border-radius: 50%;
+
+    @include hover {
+      border: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 18px;
+  }
+
+  &__link {
+    display: flex;
+    width: 24px;
+    color: var(--color-light);
+
+    @include hover {
+      color: var(--color-light-gray);
+    }
+  }
+
+  &__extra {
+    padding-block: 15px;
+  }
+
+  &__copyright {
+    font-size: 14px;
+  }
+}
+.logo__image {
+  height: auto;
+}
+
+.footer__title.has-arrow::after {
+  content: "";
+  height: 0.7em;
+  aspect-ratio: 1;
+  display: inline-block;
+  background: url("/icons/bold-arrow-down-right.svg") center/contain no-repeat;
+  scale: -1 1;
+  margin-left: 0.5em;
+}
+
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+svg * {
+  transition-property: fill, stroke;
+}

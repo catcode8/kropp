@@ -1,0 +1,86 @@
+@use "../media" as *;
+@use "../mixins" as *;
+
+.header {
+  &__inner {
+    padding-inline: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    min-height: var(--header-height);
+
+    @include tablet {
+      padding-inline: 15px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      row-gap: 10px;
+    }
+
+    @include mobile {
+      padding-top: 10px;
+    }
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__menu {
+    @include tablet {
+      order: 1;
+      flex-basis: 100%;
+    }
+  }
+
+  &__menu--list {
+    display: flex;
+    column-gap: 50px;
+    flex-wrap: wrap;
+
+    @include mobile {
+      column-gap: 24px;
+    }
+  }
+
+  &__menu--item {
+    &.is-current a::after {
+      content: "";
+      width: 5px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+  }
+
+  &__menu--link {
+    display: inline-flex;
+    height: var(--header-height);
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--color-light);
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    gap: 7px;
+
+    @include tablet {
+      height: 50px;
+    }
+
+    @include mobile {
+      height: 32px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: 40px;
+
+    @include mobile {
+      column-gap: 15px;
+    }
+  }
+
+}
+
