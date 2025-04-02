@@ -367,7 +367,7 @@ p:not(:last-child) {
   right: 0;
   height: 100%;
   aspect-ratio: 1;
-  background: url("icons/arrow-top-right.svg") center/70% no-repeat;
+  background: url("../icons/arrow-top-right.svg") center/70% no-repeat;
   border: var(--border-light);
   border-radius: 50%;
 }
@@ -567,7 +567,7 @@ input[type=number] {
   content: "";
   width: clamp(60px, 10.1vw, 194px);
   aspect-ratio: 1;
-  background: url("icons/bold-arrow-down-right.svg") center/contain no-repeat;
+  background: url("../icons/bold-arrow-down-right.svg") center/contain no-repeat;
   margin-left: 35px;
   margin-right: 30px;
 }
@@ -693,7 +693,7 @@ input[type=number] {
   right: calc(100% + 8px);
   width: 26px;
   aspect-ratio: 1;
-  background: url("icons/plus.svg") center/contain no-repeat;
+  background: url("../icons/plus.svg") center/contain no-repeat;
 }
 .backdrop-title::after {
   content: attr(data-title);
@@ -743,7 +743,7 @@ input[type=number] {
   align-items: center;
   row-gap: 32px;
   padding-top: var(--trainingTypesItemBgIconSize);
-  background: url("icons/transparent-wrrow-left.svg") 100% 0/var(--trainingTypesItemBgIconSize) no-repeat;
+  background: url("../icons/transparent-wrrow-left.svg") 100% 0/var(--trainingTypesItemBgIconSize) no-repeat;
 }
 @media (max-width: 767px) {
   .training-types__item {
@@ -766,7 +766,7 @@ input[type=number] {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("images/join-us-bg.jpg") center/cover no-repeat;
+  background: url("../images/join-us-bg.jpg") center/cover no-repeat;
 }
 .join-us__video-block {
   position: relative;
@@ -815,7 +815,7 @@ input[type=number] {
   content: "";
   width: 26px;
   aspect-ratio: 1;
-  background: url("icons/arrow-top-right.svg") center/contain no-repeat;
+  background: url("../icons/arrow-top-right.svg") center/contain no-repeat;
 }
 @media (hover: hover) {
   .join-us__video-play-button:hover {
@@ -860,7 +860,7 @@ input[type=number] {
   height: 0.7em;
   aspect-ratio: 1;
   display: inline-block;
-  background: url("icons/bold-arrow-down-right.svg") center/contain no-repeat;
+  background: url("../icons/bold-arrow-down-right.svg") center/contain no-repeat;
   scale: 1 -1;
   margin-left: 0.14em;
 }
@@ -1201,7 +1201,7 @@ input[type=number] {
   right: 1px;
   height: 96%;
   aspect-ratio: 1;
-  background: url("icons/arrow-top-right.svg") center/70% no-repeat;
+  background: url("../icons/arrow-top-right.svg") center/70% no-repeat;
   border: var(--border-gray);
   border-radius: 50%;
 }
@@ -1250,7 +1250,7 @@ input[type=number] {
   height: 0.7em;
   aspect-ratio: 1;
   display: inline-block;
-  background: url("icons/bold-arrow-down-right.svg") center/contain no-repeat;
+  background: url("../icons/bold-arrow-down-right.svg") center/contain no-repeat;
   scale: -1 1;
   margin-left: 0.5em;
 }

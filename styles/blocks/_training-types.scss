@@ -30,7 +30,7 @@
     align-items: center;
     row-gap: 32px;
     padding-top: var(--trainingTypesItemBgIconSize);
-    background: url('icons/transparent-wrrow-left.svg') 100% 0/var(--trainingTypesItemBgIconSize) no-repeat;
+    background: url('../icons/transparent-wrrow-left.svg') 100% 0/var(--trainingTypesItemBgIconSize) no-repeat;
 
     @include mobile {
       --trainingTypesItemBgIconSize: 50px;
